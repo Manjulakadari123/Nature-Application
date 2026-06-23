@@ -8,7 +8,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = 'yourdockerhubusername/nature-app'
+        IMAGE_NAME = 'manjula/nature-app'
     }
 
     stages {
