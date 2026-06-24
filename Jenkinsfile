@@ -14,9 +14,15 @@ pipeline {
             }
         }
 
+        stage('Verify Latest Code') {
+            steps {
+                sh 'git log --oneline -1'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE_NAME:$BUILD_NUMBER .'
+                sh 'docker build --no-cache -t $IMAGE_NAME:$BUILD_NUMBER .'
             }
         }
 
@@ -29,10 +35,7 @@ pipeline {
                         passwordVariable: 'DOCKER_PASS'
                     )
                 ]) {
-                    sh '''
-                    echo $DOCKER_PASS | docker login \
-                    -u $DOCKER_USER --password-stdin
-                    '''
+                    sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                 }
             }
         }
@@ -55,16 +58,6 @@ pipeline {
                 $IMAGE_NAME:$BUILD_NUMBER
                 '''
             }
-        }
-    }
-
-    post {
-        success {
-            echo 'Pipeline executed successfully!'
-        }
-
-        failure {
-            echo 'Pipeline failed!'
         }
     }
 }
