@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'manjula/nature-app'
+        IMAGE_NAME = 'manjulakadari/nature-app'
     }
 
     stages {
