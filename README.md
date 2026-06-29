@@ -88,6 +88,7 @@ sudo apt update
 sudo apt install openjdk-21-jdk -y
 
 Step 14: Install Jenkins
+
 sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
