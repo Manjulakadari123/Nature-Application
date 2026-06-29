@@ -92,15 +92,21 @@ Create Ubuntu EC2.
 Allow:
 
 SSH (22)
+
 HTTP (80)
+
 Jenkins (8080)
 
 Step 12: Connect
+
 ssh -i key.pem ubuntu@<public-ip>
+
 Phase 5: Install Jenkins
 
 Step 13: Install Java
+
 sudo apt update
+
 sudo apt install openjdk-21-jdk -y
 
 Step 14: Install Jenkins
@@ -110,6 +116,7 @@ sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
+  
 sudo apt update
 
 sudo apt install jenkins
