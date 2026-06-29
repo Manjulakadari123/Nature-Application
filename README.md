@@ -266,7 +266,7 @@ GitHub → Settings → Webhooks
 
 Payload URL:
 
-http://<EC2-IP>:8080/github-webhook/
+http://<ec2-id>:8080/github-webhook/
 
 Content Type:
 
