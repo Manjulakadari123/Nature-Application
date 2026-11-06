@@ -54,7 +54,7 @@ pipeline {
 
                 docker run -d \
                 --name nature-app \
-                -p 80:80 \
+                -p 8081:80 \
                 $IMAGE_NAME:$BUILD_NUMBER
                 '''
             }
